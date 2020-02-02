@@ -9,7 +9,7 @@
   gather_facts: false
   tasks:
     - setup:
-    - ec2_facts:
+    - ec2_instance_info:
 
 - name: Deploy filebeat
   gather_facts: false
