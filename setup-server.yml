@@ -9,7 +9,6 @@
   gather_facts: false
   tasks:
     - setup:
-    - ec2_instance_info:
 
 - name: Setup chrony
   hosts: all
