@@ -1,0 +1,12 @@
+---
+- name: Setup chrony
+  gather_facts: false
+  hosts: all
+  roles:
+     - { role: influxdata.chrony }
+
+- name: Setup docker and docker-compose
+  gather_facts: false
+  hosts: all
+  roles:
+     - { role: geerlingguy.docker }
