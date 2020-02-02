@@ -3,10 +3,12 @@
   gather_facts: false
   hosts: all
   roles:
-     - { role: influxdata.chrony }
+     - { role: influxdata.chrony 
+         when: enable_chrony | bool }
 
 - name: Setup docker and docker-compose
   gather_facts: false
   hosts: all
   roles:
-     - { role: geerlingguy.docker }
+     - { role: geerlingguy.docker
+         when: enable_docker | bool }

@@ -1,0 +1,14 @@
+---
+- name: Deploy filebeat
+  gather_facts: false
+  hosts: all
+  roles:
+     - { role: geerlingguy.filebeat,
+         when: enable_filebeat | bool }
+
+- name: Deploy telegraf
+  gather_facts: false
+  hosts: all
+  roles:
+     - { role: rossmcdonald.telegraf,
+         when: enable_telegraf | bool }

@@ -1,0 +1,16 @@
+## Global configuration
+enable_chrony: true
+enable_docker: true
+enable_docker_compose: true
+enable_filebeat: true
+enable_telegraf: true
+
+## Docker and Docker Compose configuration
+docker_install_compose: '{{ enable_docker_compose | bool }}'
+
+## Filebeat configuration
+filebeat_output_logstash_enabled: false
+filebeat_enable_logging: true
+filebeat_log_level: warning
+filebeat_log_dir: /var/log/mybeat
+filebeat_log_filename: mybeat.log
