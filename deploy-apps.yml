@@ -1,4 +1,16 @@
 ---
+# NOTE(awiddersheim): Gather facts for all hosts as a
+# first step since several plays below require them when
+# building their configurations. The below 'gather_facts'
+# set to 'false' is a bit confusing but this is to avoid
+# Ansible gathering facts twice.
+- name: Gather facts for all hosts
+  hosts: all
+  gather_facts: false
+  tasks:
+    - setup:
+    - ec2_facts:
+
 - name: Deploy filebeat
   gather_facts: false
   hosts: all
