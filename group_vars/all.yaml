@@ -9,7 +9,6 @@ enable_telegraf: true
 docker_install_compose: '{{ enable_docker_compose | bool }}'
 
 ## Filebeat configuration
-filebeat_output_logstash_enabled: false
 filebeat_enable_logging: true
 filebeat_log_level: warning
 filebeat_log_dir: /var/log/mybeat
